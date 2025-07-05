@@ -100,29 +100,44 @@
     .mizuki-title {
       font-family: 'Pacifico', cursive;
     }
+	  
+	 @font-face {
+    font-family: 'Barrbar';
+    src: url(' "../../Downloads/barrbar/Barbarr.ttf"') format('truetype'); /* Adjust path if needed */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .font-barrbar {
+    font-family: 'Barrbar', sans-serif;
+  }
+	  
   </style>
 </head>
 <body class="bg-mizuki-cream font-sans">
 
   <!-- Navigation -->
-  <nav class="bg-mizuki-pink text-white shadow-lg">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="flex items-center space-x-2">
-        <i class="fas fa-birthday-cake text-2xl text-mizuki-yellow"></i>
-        <span class="text-xl font-bold">MizukiCakes</span>
-      </div>
-      <div class="hidden md:flex space-x-6">
-        <button onclick="showSection('home')" class="nav-link hover:text-mizuki-yellow transition">Home</button>
-        <button onclick="showSection('menu')" class="nav-link hover:text-mizuki-yellow transition">Menu</button>
-        <button onclick="showSection('cart')" class="nav-link hover:text-mizuki-yellow transition relative">
-          <i class="fas fa-shopping-cart"></i>
-          <span id="cart-count" class="absolute -top-2 -right-3 bg-mizuki-yellow text-mizuki-darkpink rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">0</span>
-        </button>
-      </div>
-      <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
-        <i class="fas fa-bars"></i>
+<nav class="bg-mizuki-pink text-white shadow-lg">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <button onclick="showSection('home')" class="flex items-center space-x-2 hover:opacity-80 transition focus:outline-none">
+  <img src="../../Downloads/3ffa2f79-81f5-478c-89c9-6724b352ba51.png" alt="Cake Icon" class="w-7 h-7 object-contain">
+  <span class="text-3xl font-bold font-barrbar">MizukiCakes</span>
+</button>
+
+    <div class="hidden md:flex space-x-6">
+      <button onclick="showSection('home')" class="nav-link hover:text-mizuki-yellow transition">Home</button>
+      <button onclick="showSection('menu')" class="nav-link hover:text-mizuki-yellow transition">Menu</button>
+      <button onclick="showSection('cart')" class="nav-link hover:text-mizuki-yellow transition relative">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="absolute -top-2 -right-3 bg-mizuki-yellow text-mizuki-darkpink rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">0</span>
       </button>
     </div>
+    <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-mizuki-darkpink px-4 py-2">
       <button onclick="showSection('home')" class="block w-full text-left py-2 hover:text-mizuki-yellow transition">Home</button>
@@ -138,7 +153,7 @@
   <section id="home" class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
   <!-- Video background -->
   <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-    <source src="../../Documents/ELS VIDEO DRAF/MAH07804.MP4" type="video/mp4">
+    <source src="../../Documents/ae/ASSIGNMENT AE/AE final assignment/RV.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -386,7 +401,7 @@
 
       <!-- Video -->
       <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
+        <source src="../../Documents/ae/ASSIGNMENT AE/AE final assignment/remove bg_2.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
 
@@ -395,124 +410,255 @@
 
 
 
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Cake 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-cookie-bite text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
-                        <p class="text-gray-600 mb-2">Layers of vanilla sponge, fresh strawberries, and whipped cream - perfect for any occasion!</p>
-                        <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
-                            <button onclick="addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Cake Card -->
+<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="../../Downloads/lightstick (13).png" alt="Strawberry Dream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
+    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
+      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="cakeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
+    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="h-56 w-full overflow-hidden rounded-t-lg">
+      <img id="modalImage5" src="../../Downloads/Mizuki's Beef Burger.png" alt="Cake Image" class="w-full h-full object-cover" />
+    </div>
+    <div class="p-6">
+      <h2 id="modalTitle5" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
+      <p id="modalDesc5" class="text-gray-700 mb-2"></p>
+      <ul id="modalIngredients5" class="list-disc list-inside text-gray-600 mb-4"></ul>
+      <p id="modalPrice5" class="text-mizuki-darkpink font-semibold text-lg"></p>
+    </div>
+  </div>
+</div>
+
 
                 <!-- Cake 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-ice-cream text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Chocolate Heaven</h3>
-                        <p class="text-gray-600 mb-4">Rich chocolate cake with fudge filling and chocolate ganache - a chocoholic's dream come true!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$9.00</span>
-                            <button onclick="addToCart('Chocolate Heaven', 9.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                 <!-- Cake Card -->
+<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="../../Downloads/lightstick (13).png" alt="Strawberry Dream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
+    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
+      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="cakeModal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
+    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="h-56 w-full overflow-hidden rounded-t-lg">
+      <img id="modalImage6" src="../../Downloads/lightstick (13).png" alt="Cake Image" class="w-full h-full object-cover" />
+    </div>
+    <div class="p-6">
+      <h2 id="modalTitle6" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
+      <p id="modalDesc6" class="text-gray-700 mb-2"></p>
+      <ul id="modalIngredients6" class="list-disc list-inside text-gray-600 mb-4"></ul>
+      <p id="modalPrice6" class="text-mizuki-darkpink font-semibold text-lg"></p>
+    </div>
+  </div>
+</div>
+
 
                 <!-- Cake 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-birthday-cake text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Matcha Delight</h3>
-                        <p class="text-gray-600 mb-4">Green tea flavored cake with red bean filling and matcha frosting - a taste of Japan in every bite!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$9.50</span>
-                            <button onclick="addToCart('Matcha Delight', 9.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                 <!-- Cake Card -->
+<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="../../Downloads/lightstick (13).png" alt="Strawberry Dream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
+    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
+      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="cakeModal2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
+    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="h-56 w-full overflow-hidden rounded-t-lg">
+      <img id="modalImage7" src="../../Downloads/lightstick (13).png" alt="Cake Image" class="w-full h-full object-cover" />
+    </div>
+    <div class="p-6">
+      <h2 id="modalTitle7" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
+      <p id="modalDesc7" class="text-gray-700 mb-2"></p>
+      <ul id="modalIngredients7" class="list-disc list-inside text-gray-600 mb-4"></ul>
+      <p id="modalPrice7" class="text-mizuki-darkpink font-semibold text-lg"></p>
+    </div>
+  </div>
+</div>
+
 
                 <!-- Cake 4 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-candy-cane text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Red Velvet Bliss</h3>
-                        <p class="text-gray-600 mb-4">Classic red velvet cake with cream cheese frosting - moist, flavorful, and absolutely divine!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$8.75</span>
-                            <button onclick="addToCart('Red Velvet Bliss', 8.75, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                 <!-- Cake Card -->
+<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="images/strawberry-dream.jpg" alt="Strawberry Dream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
+    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
+      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="cakeModal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
+    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="h-56 w-full overflow-hidden rounded-t-lg">
+      <img id="modalImage8" src="../../Downloads/WORKSHIRT KARMA 1-01.png" alt="Cake Image" class="w-full h-full object-cover" />
+    </div>
+    <div class="p-6">
+      <h2 id="modalTitle8" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
+      <p id="modalDesc8" class="text-gray-700 mb-2"></p>
+      <ul id="modalIngredients8" class="list-disc list-inside text-gray-600 mb-4"></ul>
+      <p id="modalPrice8" class="text-mizuki-darkpink font-semibold text-lg"></p>
+    </div>
+  </div>
+</div>
+
 
                 <!-- Cake 5 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-pie-chart text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Lemon Zest</h3>
-                        <p class="text-gray-600 mb-4">Tangy lemon cake with lemon curd filling and meringue topping - a refreshing citrus delight!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$8.25</span>
-                            <button onclick="addToCart('Lemon Zest', 8.25, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                 <!-- Cake Card -->
+<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="images/strawberry-dream.jpg" alt="Strawberry Dream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
+    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
+      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="cakeModal4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
+    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="h-56 w-full overflow-hidden rounded-t-lg">
+      <img id="modalImage9" src="../../Downloads/WORKSHIRT KARMA 1-01.png" alt="Cake Image" class="w-full h-full object-cover" />
+    </div>
+    <div class="p-6">
+      <h2 id="modalTitle9" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
+      <p id="modalDesc9" class="text-gray-700 mb-2"></p>
+      <ul id="modalIngredients9" class="list-disc list-inside text-gray-600 mb-4"></ul>
+      <p id="modalPrice9" class="text-mizuki-darkpink font-semibold text-lg"></p>
+    </div>
+  </div>
+</div>
+
 
                 <!-- Cake 6 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-mug-hot text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Tiramisu Classic</h3>
-                        <p class="text-gray-600 mb-2">Coffee-flavored Italian dessert with mascarpone cheese - our most requested dessert!</p>
-                        <p class="text-sm text-gray-500 mb-4">☕ 520 calories</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$9.25</span>
-                            <button onclick="addToCart('Tiramisu Classic', 9.25, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                 <!-- Cake Card -->
+<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="images/strawberry-dream.jpg" alt="Strawberry Dream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
+    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
+      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="cakeModal5" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
+    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="h-56 w-full overflow-hidden rounded-t-lg">
+      <img id="modalImage10" src="../../Downloads/WORKSHIRT KARMA 1-01.png" alt="Cake Image" class="w-full h-full object-cover" />
+    </div>
+    <div class="p-6">
+      <h2 id="modalTitle10" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
+      <p id="modalDesc10" class="text-gray-700 mb-2"></p>
+      <ul id="modalIngredients10" class="list-disc list-inside text-gray-600 mb-4"></ul>
+      <p id="modalPrice10" class="text-mizuki-darkpink font-semibold text-lg"></p>
+    </div>
+  </div>
+</div>
+
             </div>
         </div>
 
         <!-- Cupcakes Category -->
         <div id="cupcakes-category" class="category-content hidden">
-			<!-- Title -->
-  <h2 class="text-4xl font-bold text-center text-mizuki-darkpink mb-6">Cakes</h2>
-			<!-- Category Video (Updated Size) -->
-<div class="mb-10 w-full flex justify-center">
-  <video autoplay muted loop playsinline class="w-full max-w-5xl h-[450px] object-cover rounded-lg shadow-lg">
-    <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+			<!-- Video Container with Title on Top -->
+  <div class="relative mb-10 w-full flex justify-center">
+    <!-- Video Box (Fixed 1080x1080 or responsive square) -->
+    <div class="w-full max-w-[1080px] aspect-square rounded-lg overflow-hidden shadow-lg relative">
+      
+      <!-- Title Overlaid -->
+      <div class="absolute top-0 left-0 w-full text-center py-6 bg-gradient-to-b from-black/40 to-transparent z-10">
+        <h2 class="text-4xl font-bold text-white drop-shadow">Cakes</h2>
+      </div>
+
+      <!-- Video -->
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
 </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Cupcake 1 -->
@@ -571,15 +717,24 @@
 
         <!-- Cookies Category -->
         <div id="cookies-category" class="category-content hidden">
-			<!-- Title -->
-  <h2 class="text-4xl font-bold text-center text-mizuki-darkpink mb-6">loyang Cinnamon Roll</h2>
-			<!-- Category Video (Updated Size) -->
-<div class="mb-10 w-full flex justify-center">
-  <video autoplay muted loop playsinline class="w-full max-w-5xl h-[450px] object-cover rounded-lg shadow-lg">
-    <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+			<!-- Video Container with Title on Top -->
+  <div class="relative mb-10 w-full flex justify-center">
+    <!-- Video Box (Fixed 1080x1080 or responsive square) -->
+    <div class="w-full max-w-[1080px] aspect-square rounded-lg overflow-hidden shadow-lg relative">
+      
+      <!-- Title Overlaid -->
+      <div class="absolute top-0 left-0 w-full text-center py-6 bg-gradient-to-b from-black/40 to-transparent z-10">
+        <h2 class="text-4xl font-bold text-white drop-shadow">Loyang Cinnamon Roll</h2>
+      </div>
+
+      <!-- Video -->
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
+  </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Cookie 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
@@ -637,15 +792,24 @@
 
         <!-- Savouries Category -->
         <div id="savouries-category" class="category-content hidden">
-			<!-- Title -->
-  <h2 class="text-4xl font-bold text-center text-mizuki-darkpink mb-6">Western & Asian Delights</h2>
-			<!-- Category Video (Updated Size) -->
-<div class="mb-10 w-full flex justify-center">
-  <video autoplay muted loop playsinline class="w-full max-w-5xl h-[450px] object-cover rounded-lg shadow-lg">
-    <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+			<!-- Video Container with Title on Top -->
+  <div class="relative mb-10 w-full flex justify-center">
+    <!-- Video Box (Fixed 1080x1080 or responsive square) -->
+    <div class="w-full max-w-[1080px] aspect-square rounded-lg overflow-hidden shadow-lg relative">
+      
+      <!-- Title Overlaid -->
+      <div class="absolute top-0 left-0 w-full text-center py-6 bg-gradient-to-b from-black/40 to-transparent z-10">
+        <h2 class="text-4xl font-bold text-white drop-shadow">Wester & Asian Delights</h2>
+      </div>
+
+      <!-- Video -->
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
+  </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Savoury 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
@@ -703,15 +867,24 @@
 
         <!-- Desserts Category -->
         <div id="desserts-category" class="category-content hidden">
-			<!-- Title -->
-  <h2 class="text-4xl font-bold text-center text-mizuki-darkpink mb-6">Desserts</h2>
-			<!-- Category Video (Updated Size) -->
-<div class="mb-10 w-full flex justify-center">
-  <video autoplay muted loop playsinline class="w-full max-w-5xl h-[450px] object-cover rounded-lg shadow-lg">
-    <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+			<!-- Video Container with Title on Top -->
+  <div class="relative mb-10 w-full flex justify-center">
+    <!-- Video Box (Fixed 1080x1080 or responsive square) -->
+    <div class="w-full max-w-[1080px] aspect-square rounded-lg overflow-hidden shadow-lg relative">
+      
+      <!-- Title Overlaid -->
+      <div class="absolute top-0 left-0 w-full text-center py-6 bg-gradient-to-b from-black/40 to-transparent z-10">
+        <h2 class="text-4xl font-bold text-white drop-shadow">Desserts</h2>
+      </div>
+
+      <!-- Video -->
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
+  </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Dessert 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
@@ -769,15 +942,24 @@
 
         <!-- Drinks Category -->
         <div id="drinks-category" class="category-content hidden">
-			<!-- Title -->
-  <h2 class="text-4xl font-bold text-center text-mizuki-darkpink mb-6">Beverages</h2>
-			<!-- Category Video (Updated Size) -->
-<div class="mb-10 w-full flex justify-center">
-  <video autoplay muted loop playsinline class="w-full max-w-5xl h-[450px] object-cover rounded-lg shadow-lg">
-    <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+			<!-- Video Container with Title on Top -->
+  <div class="relative mb-10 w-full flex justify-center">
+    <!-- Video Box (Fixed 1080x1080 or responsive square) -->
+    <div class="w-full max-w-[1080px] aspect-square rounded-lg overflow-hidden shadow-lg relative">
+      
+      <!-- Title Overlaid -->
+      <div class="absolute top-0 left-0 w-full text-center py-6 bg-gradient-to-b from-black/40 to-transparent z-10">
+        <h2 class="text-4xl font-bold text-white drop-shadow">Beverages</h2>
+      </div>
+
+      <!-- Video -->
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="../../Documents/ELS VIDEO DRAF/MAH07803.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
+  </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Drink 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
@@ -880,44 +1062,53 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-mizuki-darkpink text-white py-8 px-4">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-birthday-cake text-2xl text-mizuki-yellow"></i>
-                        <span class="text-xl font-bold">MizukiCakes</span>
-                    </div>
-                    <p class="mt-2">Sweet moments start here</p>
-                    <p class="mt-1 text-sm">Open daily from 8am to 8pm</p>
-                </div>
-                
-                <div class="mb-6 md:mb-0">
-                    <h4 class="font-bold mb-2">Visit Us</h4>
-                    <p>123 Sweet Street</p>
-                    <p>Dessertville, CA 90210</p>
-                    <p class="mt-2">(555) 123-4567</p>
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="#" class="hover:text-mizuki-yellow transition"><i class="fab fa-facebook-f text-xl"></i></a>
-                    <a href="#" class="hover:text-mizuki-yellow transition"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="#" class="hover:text-mizuki-yellow transition"><i class="fab fa-twitter text-xl"></i></a>
-                </div>
-            </div>
-            
-            <div class="border-t border-mizuki-pink mt-8 pt-6 text-center text-sm">
-                <p>&copy; 2023 MizukiCakes. All rights reserved.</p>
-                <p class="mt-1">Made with <i class="fas fa-heart text-mizuki-pink"></i> for sweet tooths everywhere</p>
-            </div>
+<footer class="bg-mizuki-darkpink text-white py-8 px-4">
+  <div class="container mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Brand & Slogan -->
+      <div class="mb-6 md:mb-0 text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start space-x-2">
+          <img src="../../Downloads/3ffa2f79-81f5-478c-89c9-6724b352ba51.png" alt="Cake Icon" class="w-7 h-7 object-contain">
+          <span class="text-3xl font-bold font-barrbar">MizukiCakes</span>
         </div>
-    </footer>
+        <p class="mt-2">Sweet moments start here</p>
+        <p class="mt-1 text-sm">Daily: 12:30 pm – 10:00 pm</p>
+      </div>
+
+      <!-- Address & Contact -->
+      <div class="mb-6 md:mb-0 text-center md:text-left">
+        <h4 class="font-bold mb-2">Visit Us</h4>
+        <p>48-2, Jln Eco Grandeur 1/8A</p>
+        <p>42300 Puncak Alam, Selangor</p>
+        <p class="mt-2">📞 016-347 5987</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="flex space-x-6">
+        <a href="https://www.instagram.com/mizukis_cafe/?hl=en" class="hover:text-mizuki-yellow transition"><i class="fab fa-facebook-f text-xl"></i></a>
+        <a href="https://web.facebook.com/mizukicakes/?_rdc=1&_rdr#" class="hover:text-mizuki-yellow transition"><i class="fab fa-instagram text-xl"></i></a>
+        <a href="https://www.tiktok.com/@mizukis_cafe_?lang=en" class="hover:text-mizuki-yellow transition"><i class="fab fa-tiktok text-xl"></i></a>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-mizuki-pink mt-8 pt-6 text-center text-sm">
+      <p>&copy; 2025 MizukiCakes. All rights reserved.</p>
+      <p class="mt-1">Made with <i class="fas fa-heart text-mizuki-pink"></i> for sweet tooths everywhere</p>
+    </div>
+  </div>
+</footer>
+
 
     <!-- Notification Toast -->
-    <div id="toast" class="fixed bottom-4 right-4 bg-mizuki-yellow text-mizuki-darkpink px-6 py-3 rounded-lg shadow-lg font-semibold transform translate-y-10 opacity-0 transition-all duration-300 flex items-center">
-        <i class="fas fa-check-circle mr-2"></i>
-        <span id="toast-message">Item added to cart!</span>
-    </div>
+<div id="toast" class="fixed bottom-4 right-4 bg-mizuki-yellow text-mizuki-darkpink px-6 py-3 rounded-lg shadow-lg font-semibold transform translate-y-10 opacity-0 transition-all duration-300 flex items-center space-x-4">
+    <i class="fas fa-check-circle"></i>
+    <span id="toast-message">Item added to cart!</span>
+    <button onclick="showSection('cart')" class="bg-mizuki-darkpink text-white text-sm px-3 py-1 rounded-full hover:bg-mizuki-pink transition">
+        View Cart
+    </button>
+</div>
+
 
     <!-- Receipt Popup -->
     <div id="receipt-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
@@ -957,6 +1148,45 @@
 	
 	
     <script>
+		
+		const cakeData = {
+    strawberry: {
+      title: 'Strawberry Dream',
+      desc: 'A delightful vanilla sponge cake layered with whipped cream and fresh strawberries.',
+      ingredients: ['Vanilla Sponge', 'Fresh Strawberries', 'Whipped Cream', 'Strawberry Jam'],
+      price: '$8.50',
+      image: 'images/strawberry-dream.jpg'
+    }
+  };
+
+  function openCakeModal(id) {
+    const cake = cakeData[id];
+    if (!cake) return;
+
+    document.getElementById('modalTitle5').textContent = cake.title;
+    document.getElementById('modalDesc5').textContent = cake.desc;
+    document.getElementById('modalPrice5').textContent = cake.price;
+    document.getElementById('modalImage5').src = cake.image;
+
+    const ul = document.getElementById('modalIngredients5');
+    ul.innerHTML = '';
+    cake.ingredients.forEach(ingredient => {
+      const li = document.createElement('li');
+      li.textContent = ingredient;
+      ul.appendChild(li);
+    });
+
+    document.getElementById('cakeModal').classList.remove('hidden');
+  }
+
+  function closeCakeModal() {
+    document.getElementById('cakeModal').classList.add('hidden');
+  }
+
+  function addToCart(name, price, quantity) {
+    alert(`${name} added to cart!`);
+    // You can keep your existing cart logic here
+  }
 		
 		<!-- Script -->
 
