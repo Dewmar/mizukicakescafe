@@ -178,6 +178,24 @@
             <h2 class="text-4xl font-bold mb-4 text-mizuki-darkpink">Our Delicious Creations</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">From classic favorites to innovative new treats, we've got something to satisfy every sweet tooth. Our bakers work magic daily to bring you these delights!</p>
         </div>
+		<!-- Search Bar -->
+<div class="flex flex-col items-center justify-center mb-10">
+  <div class="flex w-full max-w-md">
+    <input id="menuSearchInput" type="text" placeholder="Search menu items..." 
+       class="w-full px-5 py-3 rounded-l-full border border-mizuki-darkpink text-gray-700 focus:outline-none"
+       oninput="searchMenuItems()" />
+
+    <button onclick="searchMenuItems()" 
+            class="bg-mizuki-darkpink text-white px-5 py-3 rounded-r-full hover:bg-mizuki-pink transition">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+  <!-- Not Found Message -->
+  <p id="noResultsMessage" class="text-center text-mizuki-darkpink text-lg mt-4 hidden">
+    No matching items found 🍰
+  </p>
+</div>
+
         
         <!-- Best Sellers Section -->
         <div class="mb-16">
@@ -411,234 +429,373 @@
 
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Cake Card -->
-<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+				<!-- CAKE CARD 1 - Galaxy Butterfly Ombre -->
+<div onclick="openMenuItemModal({
+  image: 'gambar/5.png',
+  title: 'Galaxy Butterfly Ombre',
+  ingredients: 'Vanilla sponge, blueberry jam, whipped cream, edible butterflies',
+  nutrition: '500 calories, 25g sugar, 6g protein',
+  allergy: 'Contains dairy and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
   <div class="h-48 w-full overflow-hidden">
-    <img src="../../Downloads/lightstick (13).png" alt="Strawberry Dream" class="w-full h-full object-cover" />
+    <img src="gambar/5.png" alt="Galaxy Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
-    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
-    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Galaxy Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">A dreamy ombre cake topped with galaxy butterflies</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 500 calories</p>
     <div class="flex justify-between items-center">
-      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
-      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Galaxy Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div id="cakeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="h-56 w-full overflow-hidden rounded-t-lg">
-      <img id="modalImage5" src="../../Downloads/Mizuki's Beef Burger.png" alt="Cake Image" class="w-full h-full object-cover" />
-    </div>
-    <div class="p-6">
-      <h2 id="modalTitle5" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
-      <p id="modalDesc5" class="text-gray-700 mb-2"></p>
-      <ul id="modalIngredients5" class="list-disc list-inside text-gray-600 mb-4"></ul>
-      <p id="modalPrice5" class="text-mizuki-darkpink font-semibold text-lg"></p>
-    </div>
-  </div>
-</div>
 
-
-                <!-- Cake 2 -->
-                 <!-- Cake Card -->
-<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<!-- CAKE CARD 2 - Enchanted Butterfly Ombre -->
+<div onclick="openCakeModal('enchanted')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
   <div class="h-48 w-full overflow-hidden">
-    <img src="../../Downloads/lightstick (13).png" alt="Strawberry Dream" class="w-full h-full object-cover" />
+    <img src="gambar/6.png" alt="Enchanted Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
-    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
-    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Enchanted Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">Whimsical cake with pastel layers and edible butterflies</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 490 calories</p>
     <div class="flex justify-between items-center">
-      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
-      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Enchanted Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div id="cakeModal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="h-56 w-full overflow-hidden rounded-t-lg">
-      <img id="modalImage6" src="../../Downloads/lightstick (13).png" alt="Cake Image" class="w-full h-full object-cover" />
-    </div>
-    <div class="p-6">
-      <h2 id="modalTitle6" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
-      <p id="modalDesc6" class="text-gray-700 mb-2"></p>
-      <ul id="modalIngredients6" class="list-disc list-inside text-gray-600 mb-4"></ul>
-      <p id="modalPrice6" class="text-mizuki-darkpink font-semibold text-lg"></p>
-    </div>
-  </div>
-</div>
-
-
-                <!-- Cake 3 -->
-                 <!-- Cake Card -->
-<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<!-- CAKE CARD 3 - White Butterfly Ombre -->
+<div onclick="openCakeModal('whiteombre')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
   <div class="h-48 w-full overflow-hidden">
-    <img src="../../Downloads/lightstick (13).png" alt="Strawberry Dream" class="w-full h-full object-cover" />
+    <img src="gambar/7.png" alt="White Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
-    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
-    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">White Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">Elegant white ombre design with butterfly accents</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 470 calories</p>
     <div class="flex justify-between items-center">
-      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
-      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('White Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div id="cakeModal2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="h-56 w-full overflow-hidden rounded-t-lg">
-      <img id="modalImage7" src="../../Downloads/lightstick (13).png" alt="Cake Image" class="w-full h-full object-cover" />
-    </div>
-    <div class="p-6">
-      <h2 id="modalTitle7" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
-      <p id="modalDesc7" class="text-gray-700 mb-2"></p>
-      <ul id="modalIngredients7" class="list-disc list-inside text-gray-600 mb-4"></ul>
-      <p id="modalPrice7" class="text-mizuki-darkpink font-semibold text-lg"></p>
-    </div>
-  </div>
-</div>
-
-
-                <!-- Cake 4 -->
-                 <!-- Cake Card -->
-<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<!-- CAKE CARD 4 - Galaxy Butterfly Ombre (Again) -->
+<div onclick="openCakeModal('galaxy2')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
   <div class="h-48 w-full overflow-hidden">
-    <img src="images/strawberry-dream.jpg" alt="Strawberry Dream" class="w-full h-full object-cover" />
+    <img src="gambar/8.png" alt="Galaxy Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
-    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
-    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Galaxy Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">Back by popular demand! Galactic hues and elegance</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 500 calories</p>
     <div class="flex justify-between items-center">
-      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
-      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Galaxy Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div id="cakeModal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="h-56 w-full overflow-hidden rounded-t-lg">
-      <img id="modalImage8" src="../../Downloads/WORKSHIRT KARMA 1-01.png" alt="Cake Image" class="w-full h-full object-cover" />
-    </div>
-    <div class="p-6">
-      <h2 id="modalTitle8" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
-      <p id="modalDesc8" class="text-gray-700 mb-2"></p>
-      <ul id="modalIngredients8" class="list-disc list-inside text-gray-600 mb-4"></ul>
-      <p id="modalPrice8" class="text-mizuki-darkpink font-semibold text-lg"></p>
-    </div>
-  </div>
-</div>
-
-
-                <!-- Cake 5 -->
-                 <!-- Cake Card -->
-<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<!-- CAKE CARD 5 - Birthday Picnic -->
+<div onclick="openCakeModal('picnic')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
   <div class="h-48 w-full overflow-hidden">
-    <img src="images/strawberry-dream.jpg" alt="Strawberry Dream" class="w-full h-full object-cover" />
+    <img src="gambar/9.png" alt="Birthday Picnic" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
-    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
-    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Birthday Picnic</h3>
+    <p class="text-gray-600 mb-2">Fun & festive! Perfect for picnics and celebrations</p>
+    <p class="text-sm text-gray-500 mb-4">🎉 520 calories</p>
     <div class="flex justify-between items-center">
-      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
-      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM45.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Birthday Picnic', 45.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div id="cakeModal4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="h-56 w-full overflow-hidden rounded-t-lg">
-      <img id="modalImage9" src="../../Downloads/WORKSHIRT KARMA 1-01.png" alt="Cake Image" class="w-full h-full object-cover" />
-    </div>
-    <div class="p-6">
-      <h2 id="modalTitle9" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
-      <p id="modalDesc9" class="text-gray-700 mb-2"></p>
-      <ul id="modalIngredients9" class="list-disc list-inside text-gray-600 mb-4"></ul>
-      <p id="modalPrice9" class="text-mizuki-darkpink font-semibold text-lg"></p>
+<!-- CAKE CARD 6 - Cherry Bear -->
+<div onclick="openCakeModal('cherrybear')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/10.png" alt="Cherry Bear" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Cherry Bear</h3>
+    <p class="text-gray-600 mb-2">Adorable cherry-topped bear shaped cake</p>
+    <p class="text-sm text-gray-500 mb-4">🍒 480 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM45.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Cherry Bear', 45.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
     </div>
   </div>
 </div>
-
-
-                <!-- Cake 6 -->
-                 <!-- Cake Card -->
-<div onclick="openCakeModal('strawberry')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+				
+<!-- Cookie 1 - Strawberry Chocolate Chip -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
   <div class="h-48 w-full overflow-hidden">
-    <img src="images/strawberry-dream.jpg" alt="Strawberry Dream" class="w-full h-full object-cover" />
+    <img src="gambar/15.png" alt="Strawberry Chocolate Chip" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Dream</h3>
-    <p class="text-gray-600 mb-2">Vanilla sponge, strawberries, and cream</p>
-    <p class="text-sm text-gray-500 mb-4">🍓 450 calories</p>
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Chocolate Chip</h3>
+    <p class="text-gray-600 mb-2">A fruity twist on a classic – rich chocolate chips in a strawberry dough.</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 250 calories</p>
     <div class="flex justify-between items-center">
-      <span class="text-lg font-bold text-mizuki-darkpink">$8.50</span>
-      <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 8.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM14.80</span>
+      <button onclick="addToCart('Strawberry Chocolate Chip', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div id="cakeModal5" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-    <button onclick="closeCakeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="h-56 w-full overflow-hidden rounded-t-lg">
-      <img id="modalImage10" src="../../Downloads/WORKSHIRT KARMA 1-01.png" alt="Cake Image" class="w-full h-full object-cover" />
-    </div>
-    <div class="p-6">
-      <h2 id="modalTitle10" class="text-2xl font-bold text-mizuki-darkpink mb-2"></h2>
-      <p id="modalDesc10" class="text-gray-700 mb-2"></p>
-      <ul id="modalIngredients10" class="list-disc list-inside text-gray-600 mb-4"></ul>
-      <p id="modalPrice10" class="text-mizuki-darkpink font-semibold text-lg"></p>
+<!-- Cookie 2 - Smores -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/14.png" alt="Smores Cookie" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Smores</h3>
+    <p class="text-gray-600 mb-4">A gooey marshmallow-filled cookie with melted chocolate and graham crunch.</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
+      <button onclick="addToCart('Smores', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
     </div>
   </div>
 </div>
 
-            </div>
-        </div>
+<!-- Cookie 3 - Pizza Roll -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/13.png" alt="Pizza Roll" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Pizza Roll</h3>
+    <p class="text-gray-600 mb-4">A savory-soft dough rolled with tomato sauce, cheese, and pepperoni bits.</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
+      <button onclick="addToCart('Pizza Roll', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+				
+ <!-- Savoury 1 - Korean Duck Fettucine -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/16.png" alt="Korean Duck Fettucine" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Korean Duck Fettucine</h3>
+    <p class="text-gray-600 mb-2">Rich cream pasta infused with Korean spices and tender duck slices.</p>
+    <p class="text-sm text-gray-500 mb-4">🔥 520 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM24.90</span>
+      <button onclick="addToCart('Korean Duck Fettucine', 24.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Savoury 2 - Mizuki's Chicken Burger -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/17.png" alt="Mizuki's Chicken Burger" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Mizuki's Chicken Burger</h3>
+    <p class="text-gray-600 mb-2">Juicy grilled chicken breast with house sauce in a soft brioche bun.</p>
+    <p class="text-sm text-gray-500 mb-4">🍔 480 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM24.80</span>
+      <button onclick="addToCart('Mizuki Chicken Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Savoury 3 - Mizuki's Beef Burger -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/18.png" alt="Mizuki's Beef Burger" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Mizuki's Beef Burger</h3>
+    <p class="text-gray-600 mb-2">Thick beef patty with melted cheese, lettuce, and tomato in toasted bun.</p>
+    <p class="text-sm text-gray-500 mb-4">🍔 550 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM24.80</span>
+      <button onclick="addToCart('Mizuki Beef Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Savoury 4 - Beef Lasagna -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/19.png" alt="Beef Lasagna" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Beef Lasagna</h3>
+    <p class="text-gray-600 mb-2">Layered pasta with savory beef ragu and creamy béchamel sauce.</p>
+    <p class="text-sm text-gray-500 mb-4">🍝 600 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM18.90</span>
+      <button onclick="addToCart('Beef Lasagna', 18.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Savoury 5 - Carbonara Duck Pasta -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/20.png" alt="Carbonara Duck Pasta" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Carbonara Duck Pasta</h3>
+    <p class="text-gray-600 mb-2">Creamy carbonara with savory duck slices and parmesan cheese.</p>
+    <p class="text-sm text-gray-500 mb-4">🦆 530 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM23.80</span>
+      <button onclick="addToCart('Carbonara Duck Pasta', 23.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+				
+<!-- Dessert 1 - Croffle Strawberry Ice Cream -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/21.png" alt="Croffle Strawberry Ice Cream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Croffle Strawberry Ice Cream</h3>
+    <p class="text-gray-600 mb-2">Warm croffle topped with vanilla ice cream, fresh strawberries, and syrup drizzle.</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 420 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM14.80</span>
+      <button onclick="addToCart('Croffle Strawberry Ice Cream', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Dessert 2 - Mochi Chocolate Burnt Cheesecake -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/22.png" alt="Mochi Chocolate Burnt Cheesecake" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Mochi Chocolate Burnt Cheesecake</h3>
+    <p class="text-gray-600 mb-2">A fusion of creamy burnt cheesecake wrapped in chewy mochi and chocolate glaze.</p>
+    <p class="text-sm text-gray-500 mb-4">🍫 480 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM19.00</span>
+      <button onclick="addToCart('Mochi Chocolate Burnt Cheesecake', 19.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Dessert 3 - Choco Pie -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/23.png" alt="Choco Pie" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Choco Pie</h3>
+    <p class="text-gray-600 mb-2">Soft chocolate cake sandwich with fluffy marshmallow center and rich chocolate coating.</p>
+    <p class="text-sm text-gray-500 mb-4">🍫 360 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Choco Pie', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+				
+<!-- Drink 1 - Honey Lemon Ice Cream Soda -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/24.png" alt="Honey Lemon Ice Cream Soda" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Honey Lemon Ice Cream Soda</h3>
+    <p class="text-gray-600 mb-2">Zesty lemon soda with honey and a scoop of creamy vanilla ice cream.</p>
+    <p class="text-sm text-gray-500 mb-4">🍋 210 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Honey Lemon Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Drink 2 - Strawberry Ice Cream Soda -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/25.png" alt="Strawberry Ice Cream Soda" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Ice Cream Soda</h3>
+    <p class="text-gray-600 mb-2">Fizzy strawberry soda topped with strawberry ice cream and syrup.</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 230 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Strawberry Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Drink 3 - Korean Milk Strawberry -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/26.png" alt="Korean Milk Strawberry" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Korean Milk Strawberry</h3>
+    <p class="text-gray-600 mb-2">Sweet milk infused with real strawberry chunks – Korean-style comfort drink.</p>
+    <p class="text-sm text-gray-500 mb-4">🥛🍓 200 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Korean Milk Strawberry', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
         <!-- Cupcakes Category -->
         <div id="cupcakes-category" class="category-content hidden">
@@ -654,7 +811,7 @@
 
       <!-- Video -->
       <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <source src="gambar/homepage ads.mp4" type="video/mp4">
+        <source src="gambar/cakes mograph.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
 
@@ -662,56 +819,114 @@
 </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Cupcake 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-cupcake text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Vanilla Dream Cupcake</h3>
-                        <p class="text-gray-600 mb-2">Moist vanilla cupcake with vanilla buttercream - simple yet irresistible!</p>
-                        <p class="text-sm text-gray-500 mb-4">🍰 280 calories</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$3.50</span>
-                            <button onclick="addToCart('Vanilla Dream Cupcake', 3.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!-- CAKE CARD 1 - Galaxy Butterfly Ombre -->
+<div onclick="openCakeModal('galaxy1')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/5.png" alt="Galaxy Butterfly Ombre" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Galaxy Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">A dreamy ombre cake topped with galaxy butterflies</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 500 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Galaxy Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Cupcake 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-candy text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Chocolate Fudge Cupcake</h3>
-                        <p class="text-gray-600 mb-4">Rich chocolate cupcake with fudge center and chocolate ganache topping</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$4.00</span>
-                            <button onclick="addToCart('Chocolate Fudge Cupcake', 4.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<!-- CAKE CARD 2 - Enchanted Butterfly Ombre -->
+<div onclick="openCakeModal('enchanted')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/6.png" alt="Enchanted Butterfly Ombre" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Enchanted Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">Whimsical cake with pastel layers and edible butterflies</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 490 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Enchanted Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Cupcake 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-leaf text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Matcha Green Tea Cupcake</h3>
-                        <p class="text-gray-600 mb-4">Green tea flavored cupcake with matcha frosting - a unique and delicious treat!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$4.25</span>
-                            <button onclick="addToCart('Matcha Green Tea Cupcake', 4.25, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<!-- CAKE CARD 3 - White Butterfly Ombre -->
+<div onclick="openCakeModal('whiteombre')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/7.png" alt="White Butterfly Ombre" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">White Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">Elegant white ombre design with butterfly accents</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 470 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('White Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- CAKE CARD 4 - Galaxy Butterfly Ombre (Again) -->
+<div onclick="openCakeModal('galaxy2')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/8.png" alt="Galaxy Butterfly Ombre" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Galaxy Butterfly Ombre</h3>
+    <p class="text-gray-600 mb-2">Back by popular demand! Galactic hues and elegance</p>
+    <p class="text-sm text-gray-500 mb-4">🦋 500 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM50.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Galaxy Butterfly Ombre', 50.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- CAKE CARD 5 - Birthday Picnic -->
+<div onclick="openCakeModal('picnic')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/9.png" alt="Birthday Picnic" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Birthday Picnic</h3>
+    <p class="text-gray-600 mb-2">Fun & festive! Perfect for picnics and celebrations</p>
+    <p class="text-sm text-gray-500 mb-4">🎉 520 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM45.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Birthday Picnic', 45.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- CAKE CARD 6 - Cherry Bear -->
+<div onclick="openCakeModal('cherrybear')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/10.png" alt="Cherry Bear" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Cherry Bear</h3>
+    <p class="text-gray-600 mb-2">Adorable cherry-topped bear shaped cake</p>
+    <p class="text-sm text-gray-500 mb-4">🍒 480 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM45.00</span>
+      <button onclick="event.stopPropagation(); addToCart('Cherry Bear', 45.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
             </div>
         </div>
 
@@ -737,58 +952,59 @@
   </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Cookie 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-cookie text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Classic Chocolate Chip</h3>
-                        <p class="text-gray-600 mb-2">Our signature cookie with melty chocolate chips - crispy edges, chewy center!</p>
-                        <p class="text-sm text-gray-500 mb-4">🍪 220 calories</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$2.50</span>
-                            <button onclick="addToCart('Classic Chocolate Chip Cookie', 2.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Cookie 1 - Strawberry Chocolate Chip -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/15.png" alt="Strawberry Chocolate Chip" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Chocolate Chip</h3>
+    <p class="text-gray-600 mb-2">A fruity twist on a classic – rich chocolate chips in a strawberry dough.</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 250 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM14.80</span>
+      <button onclick="addToCart('Strawberry Chocolate Chip', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Cookie 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-otter text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Oatmeal Raisin</h3>
-                        <p class="text-gray-600 mb-4">Hearty oatmeal cookie packed with plump raisins and cinnamon - a wholesome treat!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$2.75</span>
-                            <button onclick="addToCart('Oatmeal Raisin Cookie', 2.75, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<!-- Cookie 2 - Smores -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/14.png" alt="Smores Cookie" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Smores</h3>
+    <p class="text-gray-600 mb-4">A gooey marshmallow-filled cookie with melted chocolate and graham crunch.</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
+      <button onclick="addToCart('Smores', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Cookie 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-snowflake text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Sugar Cookie</h3>
-                        <p class="text-gray-600 mb-4">Buttery sugar cookie with colorful sprinkles - perfect for decorating!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$2.25</span>
-                            <button onclick="addToCart('Sugar Cookie', 2.25, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Cookie 3 - Pizza Roll -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/13.png" alt="Pizza Roll" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Pizza Roll</h3>
+    <p class="text-gray-600 mb-4">A savory-soft dough rolled with tomato sauce, cheese, and pepperoni bits.</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
+      <button onclick="addToCart('Pizza Roll', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
         <!-- Savouries Category -->
         <div id="savouries-category" class="category-content hidden">
@@ -804,7 +1020,7 @@
 
       <!-- Video -->
       <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <source src="gambar/homepage ads.mp4" type="video/mp4">
+        <source src="gambar/western mograph.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
 
@@ -812,58 +1028,97 @@
   </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Savoury 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-bread-slice text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Cheese Croissant</h3>
-                        <p class="text-gray-600 mb-2">Flaky croissant with melted cheddar cheese - perfect for breakfast or a snack!</p>
-                        <p class="text-sm text-gray-500 mb-4">🧀 380 calories</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$4.50</span>
-                            <button onclick="addToCart('Cheese Croissant', 4.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Savoury 1 - Korean Duck Fettucine -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/16.png" alt="Korean Duck Fettucine" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Korean Duck Fettucine</h3>
+    <p class="text-gray-600 mb-2">Rich cream pasta infused with Korean spices and tender duck slices.</p>
+    <p class="text-sm text-gray-500 mb-4">🔥 520 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM24.90</span>
+      <button onclick="addToCart('Korean Duck Fettucine', 24.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Savoury 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-cheese text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Spinach & Feta Quiche</h3>
-                        <p class="text-gray-600 mb-4">Flaky crust filled with spinach, feta cheese, and eggs - a protein-packed delight!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$6.50</span>
-                            <button onclick="addToCart('Spinach & Feta Quiche', 6.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<!-- Savoury 2 - Mizuki's Chicken Burger -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/17.png" alt="Mizuki's Chicken Burger" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Mizuki's Chicken Burger</h3>
+    <p class="text-gray-600 mb-2">Juicy grilled chicken breast with house sauce in a soft brioche bun.</p>
+    <p class="text-sm text-gray-500 mb-4">🍔 480 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM24.80</span>
+      <button onclick="addToCart('Mizuki Chicken Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Savoury 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-bacon text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Bacon & Cheese Scone</h3>
-                        <p class="text-gray-600 mb-4">Savory scone packed with bacon bits and cheddar cheese - hearty and delicious!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$5.00</span>
-                            <button onclick="addToCart('Bacon & Cheese Scone', 5.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Savoury 3 - Mizuki's Beef Burger -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/18.png" alt="Mizuki's Beef Burger" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Mizuki's Beef Burger</h3>
+    <p class="text-gray-600 mb-2">Thick beef patty with melted cheese, lettuce, and tomato in toasted bun.</p>
+    <p class="text-sm text-gray-500 mb-4">🍔 550 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM24.80</span>
+      <button onclick="addToCart('Mizuki Beef Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Savoury 4 - Beef Lasagna -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/19.png" alt="Beef Lasagna" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Beef Lasagna</h3>
+    <p class="text-gray-600 mb-2">Layered pasta with savory beef ragu and creamy béchamel sauce.</p>
+    <p class="text-sm text-gray-500 mb-4">🍝 600 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM18.90</span>
+      <button onclick="addToCart('Beef Lasagna', 18.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Savoury 5 - Carbonara Duck Pasta -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/20.png" alt="Carbonara Duck Pasta" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Carbonara Duck Pasta</h3>
+    <p class="text-gray-600 mb-2">Creamy carbonara with savory duck slices and parmesan cheese.</p>
+    <p class="text-sm text-gray-500 mb-4">🦆 530 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM23.80</span>
+      <button onclick="addToCart('Carbonara Duck Pasta', 23.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
         <!-- Desserts Category -->
         <div id="desserts-category" class="category-content hidden">
@@ -887,58 +1142,61 @@
   </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Dessert 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-ice-cream text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Chocolate Mousse</h3>
-                        <p class="text-gray-600 mb-2">Rich chocolate mousse with whipped cream - light yet decadent!</p>
-                        <p class="text-sm text-gray-500 mb-4">🍫 320 calories</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$6.00</span>
-                            <button onclick="addToCart('Chocolate Mousse', 6.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Dessert 1 - Croffle Strawberry Ice Cream -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/21.png" alt="Croffle Strawberry Ice Cream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Croffle Strawberry Ice Cream</h3>
+    <p class="text-gray-600 mb-2">Warm croffle topped with vanilla ice cream, fresh strawberries, and syrup drizzle.</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 420 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM14.80</span>
+      <button onclick="addToCart('Croffle Strawberry Ice Cream', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Dessert 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-apple-alt text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Apple Crumble</h3>
-                        <p class="text-gray-600 mb-4">Warm spiced apples with a crispy oat topping - served with vanilla ice cream!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$7.50</span>
-                            <button onclick="addToCart('Apple Crumble', 7.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<!-- Dessert 2 - Mochi Chocolate Burnt Cheesecake -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/22.png" alt="Mochi Chocolate Burnt Cheesecake" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Mochi Chocolate Burnt Cheesecake</h3>
+    <p class="text-gray-600 mb-2">A fusion of creamy burnt cheesecake wrapped in chewy mochi and chocolate glaze.</p>
+    <p class="text-sm text-gray-500 mb-4">🍫 480 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM19.00</span>
+      <button onclick="addToCart('Mochi Chocolate Burnt Cheesecake', 19.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Dessert 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-cheese text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">New York Cheesecake</h3>
-                        <p class="text-gray-600 mb-4">Creamy classic cheesecake with graham cracker crust - rich and satisfying!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$8.00</span>
-                            <button onclick="addToCart('New York Cheesecake', 8.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Dessert 3 - Choco Pie -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/23.png" alt="Choco Pie" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Choco Pie</h3>
+    <p class="text-gray-600 mb-2">Soft chocolate cake sandwich with fluffy marshmallow center and rich chocolate coating.</p>
+    <p class="text-sm text-gray-500 mb-4">🍫 360 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Choco Pie', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
         <!-- Drinks Category -->
         <div id="drinks-category" class="category-content hidden">
@@ -962,56 +1220,60 @@
   </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Drink 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-coffee text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Iced Matcha Latte</h3>
-                        <p class="text-gray-600 mb-2">Refreshing matcha green tea with milk - lightly sweetened for perfect balance!</p>
-                        <p class="text-sm text-gray-500 mb-4">🍵 180 calories</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$5.50</span>
-                            <button onclick="addToCart('Iced Matcha Latte', 5.50, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Drink 1 - Honey Lemon Ice Cream Soda -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/24.png" alt="Honey Lemon Ice Cream Soda" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Honey Lemon Ice Cream Soda</h3>
+    <p class="text-gray-600 mb-2">Zesty lemon soda with honey and a scoop of creamy vanilla ice cream.</p>
+    <p class="text-sm text-gray-500 mb-4">🍋 210 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Honey Lemon Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Drink 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-pink flex items-center justify-center">
-                        <i class="fas fa-mug-hot text-8xl text-mizuki-yellow"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Caramel Latte</h3>
-                        <p class="text-gray-600 mb-4">Smooth espresso with steamed milk and caramel syrup - sweet and comforting!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$5.00</span>
-                            <button onclick="addToCart('Caramel Latte', 5.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<!-- Drink 2 - Strawberry Ice Cream Soda -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/25.png" alt="Strawberry Ice Cream Soda" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Ice Cream Soda</h3>
+    <p class="text-gray-600 mb-2">Fizzy strawberry soda topped with strawberry ice cream and syrup.</p>
+    <p class="text-sm text-gray-500 mb-4">🍓 230 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Strawberry Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
-                <!-- Drink 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
-                    <div class="h-48 bg-mizuki-yellow flex items-center justify-center">
-                        <i class="fas fa-glass-whiskey text-8xl text-mizuki-darkpink"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Smoothie</h3>
-                        <p class="text-gray-600 mb-4">Fresh strawberries blended with yogurt and honey - refreshing and fruity!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-bold text-mizuki-darkpink">$6.00</span>
-                            <button onclick="addToCart('Strawberry Smoothie', 6.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                                Add to Cart <i class="fas fa-plus ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<!-- Drink 3 - Korean Milk Strawberry -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/26.png" alt="Korean Milk Strawberry" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Korean Milk Strawberry</h3>
+    <p class="text-gray-600 mb-2">Sweet milk infused with real strawberry chunks – Korean-style comfort drink.</p>
+    <p class="text-sm text-gray-500 mb-4">🥛🍓 200 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Korean Milk Strawberry', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
             </div>
         </div>
     </section>
@@ -1145,11 +1407,76 @@
     </div>
 </div>
 
+<!-- Shared Modal -->
+<div id="menuItemModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
+  <div class="bg-white rounded-lg max-w-lg w-full relative overflow-hidden shadow-xl">
+    <!-- Close Button -->
+    <button onclick="closeMenuItemModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink">
+      <i class="fas fa-times"></i>
+    </button>
 
+    <!-- Image -->
+    <div class="h-64 w-full overflow-hidden">
+      <img id="menuModalImage"  alt="Item Image" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Content -->
+    <div class="p-6 space-y-4">
+      <h2 id="menuModalTitle" class="text-2xl font-bold text-mizuki-darkpink"></h2>
+      <p id="menuModalIngredients" class="text-gray-700"><strong>Ingredients:</strong> </p>
+      <p id="menuModalNutrition" class="text-gray-700"><strong>Nutrition Facts:</strong> </p>
+      <p id="menuModalAllergy" class="text-red-600"><strong>Allergy Info:</strong> </p>
+    </div>
+  </div>
+</div>
+
+	
 	
 	
     <script>
 		
+		
+  function openMenuItemModal(options) {
+    document.getElementById('menuModalImage').src = options.image;
+    document.getElementById('menuModalTitle').innerText = options.title;
+    document.getElementById('menuModalIngredients').innerHTML = "<strong>Ingredients:</strong> " + options.ingredients;
+    document.getElementById('menuModalNutrition').innerHTML = "<strong>Nutrition Facts:</strong> " + options.nutrition;
+    document.getElementById('menuModalAllergy').innerHTML = "<strong>Allergy Info:</strong> " + options.allergy;
+    document.getElementById('menuItemModal').classList.remove('hidden');
+  }
+
+  function closeMenuItemModal() {
+    document.getElementById('menuItemModal').classList.add('hidden');
+  }
+
+
+		
+		function searchMenuItems() {
+  const input = document.getElementById('menuSearchInput').value.toLowerCase();
+  const menuCards = document.querySelectorAll('#menu .menu-item-card');
+  const noResultsMessage = document.getElementById('noResultsMessage');
+
+  let matchFound = false;
+
+  menuCards.forEach(card => {
+    const itemName = card.querySelector('h3').textContent.toLowerCase();
+    if (itemName.includes(input)) {
+      card.classList.remove('hidden');
+      matchFound = true;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+
+  // Show/hide "Not Found" message
+  if (!matchFound) {
+    noResultsMessage.classList.remove('hidden');
+  } else {
+    noResultsMessage.classList.add('hidden');
+  }
+}
+
+
 		
 		
 		const cakeData = {
