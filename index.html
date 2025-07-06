@@ -203,8 +203,10 @@
                 <i class="fas fa-crown text-mizuki-yellow mr-3"></i> Customer Favorites
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				
+				
                  <!-- Best Seller 1 -->
-        <div onclick="openModal('Korean Rose Fettucine')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
+        <div onclick="openModal1()" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
     <div class="best-seller-badge">
         <i class="fas fa-star"></i>
     </div>
@@ -214,8 +216,8 @@
     </div>
     <div class="p-6">
         <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Korean Rose Fettucine</h3>
-        <p class="text-gray-600 mb-2">Our most popular cake! Layers of vanilla sponge, fresh strawberries, and whipped cream</p>
-        <p class="text-sm text-gray-500 mb-4">🍓 450 calories | 4.9/5 (320 reviews)</p>
+        <p class="text-gray-600 mb-2">Our most popular Dish! Layers of Fettucine, pasta and duck slices.</p>
+        <p class="text-sm text-gray-500 mb-4">520 calories | 4.9/5 (320 reviews)</p>
         <div class="flex justify-between items-center">
             <span class="text-lg font-bold text-mizuki-darkpink">RM24.90</span>
             <button onclick="event.stopPropagation(); addToCart('Korean Rose Fettucine', 24.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
@@ -228,9 +230,9 @@
    
 
 <!-- Modal -->
-<div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+<div id="productModal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
     <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-        <button onclick="closeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
+        <button onclick="closeModal1()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
         <!-- Full Banner Image -->
         <div class="h-56 w-full overflow-hidden rounded-t-lg">
             <img src="gambar/1.png" alt="Korean Rose Fettucine" class="w-full h-full object-cover" />
@@ -238,14 +240,16 @@
         <div class="p-6">
             <h2 class="text-2xl font-bold text-mizuki-darkpink mb-2" id="modalTitle">Korean Rose Fettucine</h2>
             <p class="text-gray-700 mb-2" id="modalDesc">
-                A layered vanilla sponge cake filled with whipped cream, fresh strawberries, and strawberry jam.
+                A layered Fettucine, duck slices, Korean gochujang cream sauce, garlic, onions, cream, butter
             </p>
             <ul class="list-disc list-inside text-gray-600 mb-4" id="modalIngredients">
-                <li>Vanilla Sponge</li>
-                <li>Fresh Strawberries</li>
-                <li>Whipped Cream</li>
-                <li>Strawberry Jam</li>
-                <li>Sugar & Milk</li>
+                <li>Fettucine</li>
+                <li>Duck Slices</li>
+                <li>Korean gochujang cream sauce</li>
+                <li>Garlic</li>
+                <li>Onions</li>
+				<li>Cream</li>
+                <li>Butter</li>
             </ul>
             <p class="text-mizuki-darkpink font-semibold text-lg">RM24.90</p>
         </div>
@@ -254,7 +258,7 @@
 
                 
                 <!-- Best Seller 2 -->
-                  <div onclick="openModal('Mizukis Chicken Burger')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
+                  <div onclick="openModal2()" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
             <div class="best-seller-badge">
                 <i class="fas fa-star"></i>
             </div>
@@ -263,56 +267,11 @@
     </div>
             <div class="p-6">
                 <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Mizuki's Chicken Burger</h3>
-                <p class="text-gray-600 mb-2">Our most popular cake! Layers of vanilla sponge, fresh strawberries, and whipped cream</p>
-                <p class="text-sm text-gray-500 mb-4">🍓 450 calories | 4.9/5 (320 reviews)</p>
+                <p class="text-gray-600 mb-2">Our most popular Burger! Made with homemade high-quality buns and patty!</p>
+                <p class="text-sm text-gray-500 mb-4">480 calories | 4.9/5 (320 reviews)</p>
                 <div class="flex justify-between items-center">
                     <span class="text-lg font-bold text-mizuki-darkpink">RM24.80</span>
-                    <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
-                        Add to Cart <i class="fas fa-plus ml-1"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-   
-
-<!-- Modal -->
-<div id="productModal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-        <button onclick="closeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
-        <div class="p-6">
-            <div class="h-48 w-full overflow-hidden">
-        <img src="gambar/2.png" alt="Mizukis Chicken Burger" class="w-full h-full object-cover" />
-    </div>
-            <h2 class="text-2xl font-bold text-mizuki-darkpink mb-2" id="modalTitle1">Mizukis Chicken Burger</h2>
-            <p class="text-gray-700 mb-2" id="modalDesc1">
-                A layered vanilla sponge cake filled with whipped cream, fresh strawberries, and strawberry jam.
-            </p>
-            <ul class="list-disc list-inside text-gray-600 mb-4" id="modalIngredients1">
-                <li>Vanilla Sponge</li>
-                <li>Fresh Strawberries</li>
-                <li>Whipped Cream</li>
-                <li>Strawberry Jam</li>
-                <li>Sugar & Milk</li>
-            </ul>
-            <p class="text-mizuki-darkpink font-semibold text-lg">RM24.80</p>
-        </div>
-    </div>
-</div>
-                <!-- Best Seller 3 -->
-               <div onclick="openModal('Strawberry Roll')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
-            <div class="best-seller-badge">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="h-48 w-full overflow-hidden">
-        <img src="gambar/3.png" alt="Strawberry Roll" class="w-full h-full object-cover" />
-    </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Roll</h3>
-                <p class="text-gray-600 mb-2">Our most popular cake! Layers of vanilla sponge, fresh strawberries, and whipped cream</p>
-                <p class="text-sm text-gray-500 mb-4">🍓 450 calories | 4.9/5 (320 reviews)</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
-                    <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+                    <button onclick="event.stopPropagation(); addToCart('Mizukis Chicken Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
                         Add to Cart <i class="fas fa-plus ml-1"></i>
                     </button>
                 </div>
@@ -323,42 +282,42 @@
 <!-- Modal -->
 <div id="productModal2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
     <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-        <button onclick="closeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
+        <button onclick="closeModal2()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
         <div class="p-6">
             <div class="h-48 w-full overflow-hidden">
-        <img src="gambar/3.png" alt="Strawberry Roll" class="w-full h-full object-cover" />
+        <img src="gambar/2.png" alt="Mizukis Chicken Burger" class="w-full h-full object-cover" />
     </div>
-            <h2 class="text-2xl font-bold text-mizuki-darkpink mb-2" id="modalTitle2">Strawberry Dream</h2>
-            <p class="text-gray-700 mb-2" id="modalDesc2">
-                A layered vanilla sponge cake filled with whipped cream, fresh strawberries, and strawberry jam.
+            <h2 class="text-2xl font-bold text-mizuki-darkpink mb-2" id="modalTitle1">Mizukis Chicken Burger</h2>
+            <p class="text-gray-700 mb-2" id="modalDesc1">
+                Brioche bun, grilled chicken breast, lettuce, tomato, mayo-based sauce, cheese
             </p>
-            <ul class="list-disc list-inside text-gray-600 mb-4" id="modalIngredients2">
-                <li>Vanilla Sponge</li>
-                <li>Fresh Strawberries</li>
-                <li>Whipped Cream</li>
-                <li>Strawberry Jam</li>
-                <li>Sugar & Milk</li>
+            <ul class="list-disc list-inside text-gray-600 mb-4" id="modalIngredients1">
+                <li>Brioche bun</li>
+                <li>Grilled Chicken Breast</li>
+                <li>Lettuce</li>
+                <li>Tomato</li>
+                <li>Mayo-Based Sauce</li>
+				<li>Cheese</li>
             </ul>
-            <p class="text-mizuki-darkpink font-semibold text-lg">RM10.80</p>
+            <p class="text-mizuki-darkpink font-semibold text-lg">RM24.80</p>
         </div>
     </div>
 </div>
-                
-                <!-- Best Seller 4 -->
-                <div onclick="openModal('Korean Milk')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
+                <!-- Best Seller 3 -->
+               <div onclick="openModal3()" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
             <div class="best-seller-badge">
                 <i class="fas fa-star"></i>
             </div>
             <div class="h-48 w-full overflow-hidden">
-        <img src="gambar/4.png" alt="Strawberry Dream" class="w-full h-full object-cover" />
+        <img src="gambar/3.png" alt="Strawberry Roll" class="w-full h-full object-cover" />
     </div>
             <div class="p-6">
-                <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Korean Milk</h3>
+                <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Pizza Roll</h3>
                 <p class="text-gray-600 mb-2">Our most popular cake! Layers of vanilla sponge, fresh strawberries, and whipped cream</p>
-                <p class="text-sm text-gray-500 mb-4">🍓 450 calories | 4.9/5 (320 reviews)</p>
+                <p class="text-sm text-gray-500 mb-4">280 calories | 4.9/5 (320 reviews)</p>
                 <div class="flex justify-between items-center">
-                    <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
-                    <button onclick="event.stopPropagation(); addToCart('Strawberry Dream', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+                    <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
+                    <button onclick="event.stopPropagation(); addToCart('Pizza Roll', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
                         Add to Cart <i class="fas fa-plus ml-1"></i>
                     </button>
                 </div>
@@ -369,21 +328,67 @@
 <!-- Modal -->
 <div id="productModal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
     <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
-        <button onclick="closeModal()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
+        <button onclick="closeModal3()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
         <div class="p-6">
             <div class="h-48 w-full overflow-hidden">
-        <img src="gambar/4.png" alt="Korean Milk" class="w-full h-full object-cover" />
+        <img src="gambar/3.png" alt="Pizza Roll" class="w-full h-full object-cover" />
     </div>
-            <h2 class="text-2xl font-bold text-mizuki-darkpink mb-2" id="modalTitle3">Korean Milk</h2>
+            <h2 class="text-2xl font-bold text-mizuki-darkpink mb-2" id="modalTitle2">Pizza Roll</h2>
+            <p class="text-gray-700 mb-2" id="modalDesc2">
+                Bread dough, tomato paste, shredded mozzarella, pepperoni (optional), olive oil, Italian seasoning.
+            </p>
+            <ul class="list-disc list-inside text-gray-600 mb-4" id="modalIngredients2">
+                <li>Bread dough</li>
+                <li>Tomato paste</li>
+                <li>Shredded mozzarella</li>
+                <li>Pepperoni</li>
+                <li>Olive oil</li>
+				<li>Italian seasoning</li>
+            </ul>
+            <p class="text-mizuki-darkpink font-semibold text-lg">RM10.80</p>
+        </div>
+    </div>
+</div>
+                
+                <!-- Best Seller 4 -->
+                <div onclick="openModal4()" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300 relative">
+            <div class="best-seller-badge">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="h-48 w-full overflow-hidden">
+        <img src="gambar/4.png" alt="Korean Strawberry Milk" class="w-full h-full object-cover" />
+    </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Korean Strawberry Milk</h3>
+                <p class="text-gray-600 mb-2">Our most popular beverage!</p>
+                <p class="text-sm text-gray-500 mb-4">🍓 200 calories | 4.9/5 (320 reviews)</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+                    <button onclick="event.stopPropagation(); addToCart('Korean Strawberry Milk', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+                        Add to Cart <i class="fas fa-plus ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+   
+
+<!-- Modal -->
+<div id="productModal4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full relative">
+        <button onclick="closeModal4()" class="absolute top-3 right-3 text-xl text-gray-500 hover:text-mizuki-darkpink"><i class="fas fa-times"></i></button>
+        <div class="p-6">
+            <div class="h-48 w-full overflow-hidden">
+        <img src="gambar/4.png" alt="Korean Strawberry Milk" class="w-full h-full object-cover" />
+    </div>
+            <h2 class="text-2xl font-bold text-mizuki-darkpink mb-2" id="modalTitle3">Korean Strawberry Milk</h2>
             <p class="text-gray-700 mb-2" id="modalDesc3">
-                A layered vanilla sponge cake filled with whipped cream, fresh strawberries, and strawberry jam.
+                Milk, strawberry chunks, sugar, strawberry syrup
             </p>
             <ul class="list-disc list-inside text-gray-600 mb-4" id="modalIngredients3">
-                <li>Vanilla Sponge</li>
-                <li>Fresh Strawberries</li>
-                <li>Whipped Cream</li>
-                <li>Strawberry Jam</li>
-                <li>Sugar & Milk</li>
+                <li>Milk</li>
+                <li>Strawberry chunks</li>
+                <li>Sugar</li>
+                <li>Strawberry syrup</li>
             </ul>
             <p class="text-mizuki-darkpink font-semibold text-lg">RM13.80</p>
         </div>
@@ -429,7 +434,9 @@
 
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				
 				<!-- CAKE CARD 1 - Galaxy Butterfly Ombre -->
+				
 <div onclick="openMenuItemModal({
   image: 'gambar/5.png',
   title: 'Galaxy Butterfly Ombre',
@@ -437,7 +444,7 @@
   nutrition: '500 calories, 25g sugar, 6g protein',
   allergy: 'Contains dairy and eggs'
 })"
-class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Galaxy Butterfly Ombre">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/5.png" alt="Galaxy Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
@@ -456,7 +463,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 
 
 <!-- CAKE CARD 2 - Enchanted Butterfly Ombre -->
-<div onclick="openCakeModal('enchanted')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<div onclick="openMenuItemModal({
+  image: 'gambar/6.png',
+  title: 'Enchanted Butterfly Ombre',
+  ingredients: 'Vanilla sponge, blueberry jam, whipped cream, edible butterflies',
+  nutrition: '500 calories, 25g sugar, 6g protein',
+  allergy: 'Contains dairy and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Enchanted Butterfly Ombre">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/6.png" alt="Enchanted Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
@@ -474,7 +488,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- CAKE CARD 3 - White Butterfly Ombre -->
-<div onclick="openCakeModal('whiteombre')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<div onclick="openMenuItemModal({
+  image: 'gambar/7.png',
+  title: 'White Butterfly Ombre',
+  ingredients: 'Vanilla sponge, blueberry jam, whipped cream, edible butterflies',
+  nutrition: '500 calories, 25g sugar, 6g protein',
+  allergy: 'Contains dairy and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="White Butterfly Ombre">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/7.png" alt="White Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
@@ -492,7 +513,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- CAKE CARD 4 - Galaxy Butterfly Ombre (Again) -->
-<div onclick="openCakeModal('galaxy2')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<div onclick="openMenuItemModal({
+  image: 'gambar/8.png',
+  title: 'Galaxy Butterfly Ombre',
+  ingredients: 'Vanilla sponge, blueberry jam, whipped cream, edible butterflies',
+  nutrition: '500 calories, 25g sugar, 6g protein',
+  allergy: 'Contains dairy and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Galaxy Butterfly Ombre">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/8.png" alt="Galaxy Butterfly Ombre" class="w-full h-full object-cover" />
   </div>
@@ -510,7 +538,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- CAKE CARD 5 - Birthday Picnic -->
-<div onclick="openCakeModal('picnic')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<div onclick="openMenuItemModal({
+  image: 'gambar/9.png',
+  title: 'Birthday Picnic',
+  ingredients: 'Vanilla sponge, blueberry jam, whipped cream, edible butterflies',
+  nutrition: '500 calories, 25g sugar, 6g protein',
+  allergy: 'Contains dairy and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Birthday Picnin">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/9.png" alt="Birthday Picnic" class="w-full h-full object-cover" />
   </div>
@@ -528,7 +563,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- CAKE CARD 6 - Cherry Bear -->
-<div onclick="openCakeModal('cherrybear')" class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+<div onclick="openMenuItemModal({
+  image: 'gambar/10.png',
+  title: 'Cherry Bear',
+  ingredients: 'Vanilla sponge, blueberry jam, whipped cream, edible butterflies',
+  nutrition: '500 calories, 25g sugar, 6g protein',
+  allergy: 'Contains dairy and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Cherry Bear">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/10.png" alt="Cherry Bear" class="w-full h-full object-cover" />
   </div>
@@ -546,34 +588,49 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 				
 <!-- Cookie 1 - Strawberry Chocolate Chip -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/15.png',
+  title: 'Strawberry CC',
+  ingredients: 'Vanilla sponge, blueberry jam, whipped cream, edible butterflies',
+  nutrition: '500 calories, 25g sugar, 6g protein',
+  allergy: 'Contains dairy and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Strawberry CC">
   <div class="h-48 w-full overflow-hidden">
-    <img src="gambar/15.png" alt="Strawberry Chocolate Chip" class="w-full h-full object-cover" />
+    <img src="gambar/15.png" alt="Cherry Bear" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
-    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Chocolate Chip</h3>
-    <p class="text-gray-600 mb-2">A fruity twist on a classic – rich chocolate chips in a strawberry dough.</p>
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry CC</h3>
+    <p class="text-gray-600 mb-2">A fruity twist on a classic – rich strawberry puree poured on top of a homemade strawberry dough.</p>
     <p class="text-sm text-gray-500 mb-4">🍓 250 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM14.80</span>
-      <button onclick="addToCart('Strawberry Chocolate Chip', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Strawberry CC', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
-
+				
 <!-- Cookie 2 - Smores -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/14.png',
+  title: 'Smores',
+  ingredients: 'Chocolate chip cookie dough, mini marshmallows, crushed graham crackers, butter, brown sugar, flour, egg.',
+  nutrition: '300 calories, 22g sugar, 2g protein',
+  allergy: 'Contains dairy, gluten, eggs, and may contain traces of nuts'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Smores">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/14.png" alt="Smores Cookie" class="w-full h-full object-cover" />
   </div>
   <div class="p-6">
     <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Smores</h3>
     <p class="text-gray-600 mb-4">A gooey marshmallow-filled cookie with melted chocolate and graham crunch.</p>
+	  <p class="text-sm text-gray-500 mb-4">🍓 250 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
-      <button onclick="addToCart('Smores', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Smores', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -581,7 +638,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Cookie 3 - Pizza Roll -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/13.png',
+  title: 'Pizza Roll',
+  ingredients: 'read dough, tomato paste, shredded mozzarella, pepperoni (optional), olive oil, Italian seasoning.',
+  nutrition: '280 calories, 9g fat, 10g protein',
+  allergy: 'Contains dairy, gluten; may contain soy (from processed cheese or sauce)'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Pizza Roll">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/13.png" alt="Pizza Roll" class="w-full h-full object-cover" />
   </div>
@@ -590,7 +654,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-gray-600 mb-4">A savory-soft dough rolled with tomato sauce, cheese, and pepperoni bits.</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM10.80</span>
-      <button onclick="addToCart('Pizza Roll', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Pizza Roll', 10.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -598,7 +662,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 				
  <!-- Savoury 1 - Korean Duck Fettucine -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/16.png',
+  title: 'Korean Duck Fettucine',
+  ingredients: 'Fettucine, duck slices, Korean gochujang cream sauce, garlic, onions, cream, butter',
+  nutrition: '520 calories, 16g fat, 18g protein',
+  allergy: 'Contains dairy, gluten'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Korean Duck Fettucine">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/16.png" alt="Korean Duck Fettucine" class="w-full h-full object-cover" />
   </div>
@@ -608,7 +679,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🔥 520 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM24.90</span>
-      <button onclick="addToCart('Korean Duck Fettucine', 24.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Korean Duck Fettucine', 24.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -616,7 +687,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Savoury 2 - Mizuki's Chicken Burger -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/17.png',
+  title: 'Mizukis Chicken Burger',
+  ingredients: 'Brioche bun, grilled chicken breast, lettuce, tomato, mayo-based sauce, cheese',
+  nutrition: '480 calories, 12g fat, 20g protein',
+  allergy: 'Contains dairy, gluten, eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Mizukis Chicken Burger">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/17.png" alt="Mizuki's Chicken Burger" class="w-full h-full object-cover" />
   </div>
@@ -626,7 +704,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍔 480 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM24.80</span>
-      <button onclick="addToCart('Mizuki Chicken Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Mizuki Chicken Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -634,7 +712,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Savoury 3 - Mizuki's Beef Burger -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/18.png',
+  title: 'Mizukis Beef Burger',
+  ingredients: 'Toasted bun, seasoned beef patty, cheddar, lettuce, tomato, house sauce',
+  nutrition: '550 calories, 18g fat, 25g protein',
+  allergy: 'Contains dairy, gluten'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Mizukis Beef Burger">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/18.png" alt="Mizuki's Beef Burger" class="w-full h-full object-cover" />
   </div>
@@ -644,7 +729,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍔 550 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM24.80</span>
-      <button onclick="addToCart('Mizuki Beef Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Mizuki Beef Burger', 24.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -652,7 +737,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Savoury 4 - Beef Lasagna -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/19.png',
+  title: 'Beef Lasagna',
+  ingredients: 'Pasta sheets, ground beef, béchamel sauce, tomato sauce, mozzarella, parmesan',
+  nutrition: '600 calories, 25g fat, 22g protein',
+  allergy: 'Contains dairy, gluten and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Beef Lasagna">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/19.png" alt="Beef Lasagna" class="w-full h-full object-cover" />
   </div>
@@ -662,7 +754,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍝 600 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM18.90</span>
-      <button onclick="addToCart('Beef Lasagna', 18.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Beef Lasagna', 18.90, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -670,7 +762,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Savoury 5 - Carbonara Duck Pasta -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/20.png',
+  title: 'Carbonara Duck Pasta',
+  ingredients: 'Spaghetti, duck breast, egg yolk, cream, parmesan, black pepper',
+  nutrition: '530 calories, 17g fat, 19g protein',
+  allergy: 'Contains dairy, gluten and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Carbonara Duck Pasta">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/20.png" alt="Carbonara Duck Pasta" class="w-full h-full object-cover" />
   </div>
@@ -680,7 +779,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🦆 530 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM23.80</span>
-      <button onclick="addToCart('Carbonara Duck Pasta', 23.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Carbonara Duck Pasta', 23.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -688,7 +787,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 				
 <!-- Dessert 1 - Croffle Strawberry Ice Cream -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/21.png',
+  title: 'Croffle Strawberry Ice Cream',
+  ingredients: 'Croissant waffle, vanilla ice cream, fresh strawberries, strawberry syrup',
+  nutrition: '420 calories, 24g sugar, 4g protein',
+  allergy: 'Contains dairy, gluten and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Croffle Strawberry Ice Cream">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/21.png" alt="Croffle Strawberry Ice Cream" class="w-full h-full object-cover" />
   </div>
@@ -698,7 +804,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍓 420 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM14.80</span>
-      <button onclick="addToCart('Croffle Strawberry Ice Cream', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Croffle Strawberry Ice Cream', 14.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -706,7 +812,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Dessert 2 - Mochi Chocolate Burnt Cheesecake -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/22.png',
+  title: 'Mochi Chocolate Burnt Cheesecake',
+  ingredients: 'Mochi layer, chocolate burnt cheesecake, cocoa powder, sugar, cream cheese',
+  nutrition: '480 calories, 27g sugar, 6g protein',
+  allergy: 'Contains dairy, eggs; may contain gluten'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Mochi Chocolate Burnt Cheesecake">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/22.png" alt="Mochi Chocolate Burnt Cheesecake" class="w-full h-full object-cover" />
   </div>
@@ -716,7 +829,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍫 480 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM19.00</span>
-      <button onclick="addToCart('Mochi Chocolate Burnt Cheesecake', 19.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Mochi Chocolate Burnt Cheesecake', 19.00, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -724,7 +837,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Dessert 3 - Choco Pie -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/23.png',
+  title: 'Choco Pie',
+  ingredients: 'Chocolate sponge cake, marshmallow filling, dark chocolate coating',
+  nutrition: '360 calories, 20g sugar, 3g protein',
+  allergy: 'Contains dairy, gluten, eggs, gelatin'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Choco Pie">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/23.png" alt="Choco Pie" class="w-full h-full object-cover" />
   </div>
@@ -734,7 +854,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍫 360 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
-      <button onclick="addToCart('Choco Pie', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Choco Pie', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -742,7 +862,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 				
 <!-- Drink 1 - Honey Lemon Ice Cream Soda -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/24.png',
+  title: 'Honey Lemon Ice Cream Soda',
+  ingredients: 'Lemon soda, honey syrup, vanilla ice cream',
+  nutrition: '210 calories, 28g sugar',
+  allergy: 'Contains dairy'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Honey Lemon Ice Cream Soda">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/24.png" alt="Honey Lemon Ice Cream Soda" class="w-full h-full object-cover" />
   </div>
@@ -752,7 +879,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍋 210 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
-      <button onclick="addToCart('Honey Lemon Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Honey Lemon Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -760,7 +887,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Drink 2 - Strawberry Ice Cream Soda -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/25.png',
+  title: 'Strawberry Ice Cream Soda',
+  ingredients: 'Strawberry soda, strawberry ice cream, syrup drizzle',
+  nutrition: '230 calories, 30g sugar',
+  allergy: 'Contains dairy'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Strawberry Ice Cream Soda">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/25.png" alt="Strawberry Ice Cream Soda" class="w-full h-full object-cover" />
   </div>
@@ -770,7 +904,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🍓 230 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
-      <button onclick="addToCart('Strawberry Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Strawberry Ice Cream Soda', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
@@ -778,7 +912,14 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 </div>
 
 <!-- Drink 3 - Korean Milk Strawberry -->
-<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+<div onclick="openMenuItemModal({
+  image: 'gambar/26.png',
+  title: 'Korean Milk Strawberry',
+  ingredients: 'Milk, strawberry chunks, sugar, strawberry syrup',
+  nutrition: '200 calories, 22g sugar',
+  allergy: 'Contains dairy'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Korean Milk Strawberry">
   <div class="h-48 w-full overflow-hidden">
     <img src="gambar/26.png" alt="Korean Milk Strawberry" class="w-full h-full object-cover" />
   </div>
@@ -788,12 +929,38 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     <p class="text-sm text-gray-500 mb-4">🥛🍓 200 calories</p>
     <div class="flex justify-between items-center">
       <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
-      <button onclick="addToCart('Korean Milk Strawberry', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+      <button onclick="event.stopPropagation(); addToCart('Korean Milk Strawberry', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
         Add to Cart <i class="fas fa-plus ml-1"></i>
       </button>
     </div>
   </div>
 </div>
+				
+<!-- Drink 3 - Korean Milk Strawberry -->
+<div onclick="openMenuItemModal({
+  image: 'gambar/27.png',
+  title: 'Strawberry Matcha Cream',
+  ingredients: 'Matcha-infused sponge cake, fresh strawberries, sweetened matcha cream, whipped cream, strawberry jam, sugar, flour, eggs, and milk.',
+  nutrition: '380 calories, 22g of sugar, and 6g of protein.',
+  allergy: 'Contains dairy, glutens and eggs'
+})"
+class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1" data-name="Strawberry Matcha Cream">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/27.png" alt="Strawberry Matcha Cream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Matcha Cream</h3>
+    <p class="text-gray-600 mb-2">Strawberry Matcha Cream is made with matcha-infused sponge cake, fresh strawberries, sweetened matcha cream, whipped cream, strawberry jam, sugar, flour, eggs, and milk.</p>
+    <p class="text-sm text-gray-500 mb-4">🥛🍓 360 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="event.stopPropagation(); addToCart('Korean Milk Strawberry', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>				
+				
 </div>
 </div>
 
@@ -1273,6 +1440,24 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
     </div>
   </div>
 </div>
+				
+<!-- Drink 3 - Korean Milk Strawberry -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg menu-item-card transition duration-300">
+  <div class="h-48 w-full overflow-hidden">
+    <img src="gambar/27.png" alt="Strawberry Matcha Cream" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-mizuki-darkpink mb-2">Strawberry Matcha Cream</h3>
+    <p class="text-gray-600 mb-2">Strawberry Matcha Cream is made with matcha-infused sponge cake, fresh strawberries, sweetened matcha cream, whipped cream, strawberry jam, sugar, flour, eggs, and milk.</p>
+    <p class="text-sm text-gray-500 mb-4">🥛🍓 360 calories</p>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-bold text-mizuki-darkpink">RM13.80</span>
+      <button onclick="addToCart('Korean Milk Strawberry', 13.80, 1)" class="bg-mizuki-pink text-white px-4 py-2 rounded-full hover:bg-mizuki-darkpink transition">
+        Add to Cart <i class="fas fa-plus ml-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
             </div>
         </div>
@@ -1435,6 +1620,54 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 	
     <script>
 		
+function searchMenuItems() {
+  const input = document.getElementById("menuSearchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".menu-item");
+  const noResultsMessage = document.getElementById("noResultsMessage");
+
+  let hasVisibleItem = false;
+
+  cards.forEach(card => {
+    const itemName = card.getAttribute("data-name").toLowerCase();
+    const matches = itemName.includes(input);
+    card.style.display = matches ? "block" : "none";
+    if (matches) hasVisibleItem = true;
+  });
+
+  noResultsMessage.classList.toggle("hidden", hasVisibleItem);
+}
+
+
+	
+  function openModal1() {
+    document.getElementById("productModal1").classList.remove("hidden");
+  }
+  function closeModal1() {
+    document.getElementById("productModal1").classList.add("hidden");
+  }
+
+  function openModal2() {
+    document.getElementById("productModal2").classList.remove("hidden");
+  }
+  function closeModal2() {
+    document.getElementById("productModal2").classList.add("hidden");
+  }
+
+  function openModal3() {
+    document.getElementById("productModal3").classList.remove("hidden");
+  }
+  function closeModal3() {
+    document.getElementById("productModal3").classList.add("hidden");
+  }
+
+  function openModal4() {
+    document.getElementById("productModal4").classList.remove("hidden");
+  }
+  function closeModal4() {
+    document.getElementById("productModal4").classList.add("hidden");
+  }
+
+
 		
   function openMenuItemModal(options) {
     document.getElementById('menuModalImage').src = options.image;
@@ -1520,25 +1753,7 @@ class="cursor-pointer bg-white rounded-lg overflow-hidden shadow-lg transition d
 		
 		<!-- Script -->
 
-    function openModal(productName) {
-        document.getElementById('productModal').classList.remove('hidden');
-
-        // Optional: Customize based on productName
-        if (productName === 'Strawberry Dream') {
-            document.getElementById('modalTitle').textContent = 'Strawberry Dream';
-            document.getElementById('modalDesc').textContent = 'A layered vanilla sponge cake filled with whipped cream, fresh strawberries, and strawberry jam.';
-            document.getElementById('modalIngredients').innerHTML = `
-                <li>Vanilla Sponge</li>
-                <li>Fresh Strawberries</li>
-                <li>Whipped Cream</li>
-                <li>Strawberry Jam</li>
-                <li>Sugar & Milk</li>`;
-        }
-    }
-
-    function closeModal() {
-        document.getElementById('productModal').classList.add('hidden');
-    }
+   
 		
 		
         // Cart data
